@@ -6,6 +6,7 @@ type Widget interface {
 }
 
 type widgetContext struct {
+	Label string
 	Type  string
 	Field FieldInterface
 	Value string
