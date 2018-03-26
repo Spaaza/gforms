@@ -192,14 +192,15 @@ func RegexpValidator(regex string, message ...string) regexpValidator {
 }
 
 // An EmailValidator that ensures a value looks like an email address.
-func EmailValidator(message ...string) regexpValidator {
-	regex := `(?i)^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`
-	if len(message) > 0 {
-		return RegexpValidator(regex, message[0])
-	} else {
-		return RegexpValidator(regex, "Enter a valid email address.")
-	}
-}
+//DS removing this for now as it was casuing issues when some "new" email addresses were added and we have adequate validation in front end on Store and in API.
+// func EmailValidator(message ...string) regexpValidator {
+// 	regex := `(?i)^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`
+// 	if len(message) > 0 {
+// 		return RegexpValidator(regex, message[0])
+// 	} else {
+// 		return RegexpValidator(regex, "Enter a valid email address.")
+// 	}
+// }
 
 // An URLValidator that ensures a value looks like an url.
 func URLValidator(message ...string) regexpValidator {
